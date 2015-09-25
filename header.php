@@ -43,7 +43,7 @@
                 </div>
                 <nav class="nav-pc">
                             <a href="#" class="parent">
-                                <i class="fa fa-video-camera"></i>&nbsp; KÊNH
+                                <i class="fa fa-television"></i>&nbsp; KÊNH
                             </a>
                             <?php wp_nav_menu( array(
                                 'theme_location' => 'primary',

@@ -73,7 +73,6 @@
 				margin-bottom:$single-base-margin;
 				font-size: $video-title;
 				a {color: white;}
-				line-height: 30px;
 				@include media(medium){
 					margin-left:0px;
 				}
@@ -81,16 +80,33 @@
 					margin-left:0px;
 				}
 			}
-			p {
-				color: #a5a5a5;
-				margin-left: $single-base-margin; 
-				font-size: $cat-font-size;
-				line-height: 20px;
-				@include media(medium){
-					margin-left:0px;
+			.excerpt {	
+					margin-left: $single-base-margin; 
+					@include media(medium){
+						margin-left:0px;
+					}
+					@include media(small){
+						margin-left:0px;
+					}
+				p{
+					margin:0px;
+					color: #a5a5a5;
+					font-size: $cat-font-size;
 				}
-				@include media(small){
-					margin-left:0px;
+			}
+			.content-more {
+				margin-left: $single-base-margin;
+				margin-top: $single-base-margin/2; 
+					@include media(medium){
+						margin-left:0px;
+					}
+					@include media(small){
+						margin-left:0px;
+					}
+				p{
+					color: #a5a5a5;
+					margin:0px;
+					font-size: $cat-font-size;
 				}
 			}
 			#content-more {
