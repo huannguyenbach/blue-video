@@ -1,0 +1,102 @@
+#achive-main {
+	position: relative;
+	width: 100%;
+	height:auto;
+	.container {
+		position: relative;
+		width: $pc-width;
+		margin:0 auto;
+		.content {
+			width:100%;
+			padding:30px 15px;
+			clear:both;
+			.column1 {
+				width:50%;
+				margin-left:0px;
+				color:$a;
+				@include media(medium){
+					width:100%;
+				}
+				@include media(small){
+					width:100%;
+				}
+				p {
+					font-size:14px;
+					line-height:20px;
+
+				}
+			}
+			
+		}
+		.show-post {
+			width: 100%;
+			height: auto;
+			.show-post-inner {
+				width: 100%;
+				height: 100%;
+			}
+			.post {
+				width:33.3333%;
+				float:left;
+				overflow:hidden;
+				@include media(medium){
+					width:50%;
+				}
+				@include media(small){
+					width:50%;
+				}
+				@include media(smaller){
+					width:100%;
+				}
+				.post-inner {
+					padding:15px;
+					.thumb {
+						width: 100%;
+						padding: 56.25% 0 0 0;
+						position: relative;
+						top: 0px;
+						left: 0px;
+						overflow: hidden;	
+						img {
+							position: absolute;
+							top: 0;
+							left: 0;
+							display: block;
+							max-height: 100%;
+							max-width: 100%;
+						}
+						.overlay {
+							position: absolute;
+							top: 0px;
+							left: 0px;
+							height: 100%;
+							width: 100%;
+							z-index: 2;
+							background: $hover-pattern;
+							opacity: 0;
+							@include transition (1s);
+							img {
+								position: absolute;
+								top: 50%;
+								left: 50%;
+								width: 64px;
+								height: 64px;
+								margin-top: -32px;
+								margin-left: -32px;
+							}
+						}
+					}
+					&:hover .thumb .overlay {
+						opacity: 1;
+					}
+					h3 {
+						a {
+							color: $a;
+
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,75 @@
+
+.fullsize {
+	width: 100%;
+	height: 100%;
+}
+.main-slider {
+	width: 100%;
+	height: auto;
+	background: $main-slider-bg;
+	overflow: hidden;
+	.swiper-container {
+	    width: 100%;
+	    padding-top: 50px;
+	    padding-bottom: 50px;
+		.swiper-slide {
+		    background-position: center;
+		    background-size: cover;
+		    width: $main-slide-width;
+		    height: $main-slide-height;
+		    @include media(retina){
+				width: 1000px;
+				height:750px;
+			}
+		    @include media(medium){
+				width: 600px;
+				height:337.5px;
+			}
+			@include media(small){
+				width: 400px;
+				height:250px;
+			}
+		 	img {
+				@extend .fullsize;
+			}
+			.video-over {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				height: 64px;
+				width: 64px;
+				margin-left: -32px;
+				margin-top: -32px;
+				z-index: 999;
+				background: url('image/play43.png') no-repeat top left;
+				cursor: pointer;
+			}  
+			.slider-info {
+				position: absolute;
+				bottom: 0px;
+				left: 0px;
+				padding: 20px;
+				text-align: left;
+				max-width: 60%;
+				height: auto;
+				h3 {
+					a {color: white;}
+					font-size: 28px;
+					margin: 10px 0px;
+					@include media(small){
+						font-size:14px;
+					}
+				}
+				.cat {
+					a{
+						padding: 5px;
+						background:$blue1;
+						font-size: $cat-font-size;
+						color: white;
+					}
+				}
+			}
+		}
+		
+	}
+}

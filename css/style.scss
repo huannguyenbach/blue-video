@@ -1,0 +1,126 @@
+$header-bg: #ffffff;
+$pc-width: 90%;
+$slider-bg: #424040;
+$blue1 : #2580ba;
+$spaceBetween : 20px;
+$after-color : #d7d7d7;
+$cat-font-size : 14px;
+$video-title : 22px;
+$img-pro : 9/16;
+$hover-pattern : rgba(#ffffff, 0);
+$main-slider-bg :#050d17;
+$main-slide-width: 800px;
+$main-slide-height: 450px;
+$video-width: 70%;
+$a : #2C2B2B;
+$playlist-bg: #000000;
+$swiper-scrollbar: rgba(#ffffff, 1);
+$swiper-scrollbar-drag-color: rgba(#2C2B2B, 0.5);
+$single-base-margin:30px;
+a {text-decoration:none;}
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+@mixin transition($time) {
+  -webkit-transition: all $time ease; /* Safari 3.1 to 6.0 */
+	-moz-transition: all $time ease;
+	 -ms-transition: all $time ease;
+	 -o-transition: all $time ease;
+	transition: all $time ease;
+}
+/*********************
+BREAKPOINTS
+*********************/
+@mixin media($breakpoint) {
+  @if $breakpoint == "small" {
+    @media (max-width: 767px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "medium" {
+    @media (min-width: 768px) and (max-width: 991px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "large" {
+    @media (min-width: 992px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "retina" {
+    @media (min-width: 1600px) {
+      @content;
+    }
+  }
+  @else if $breakpoint == "smaller" {
+    @media (max-width: 480px) {
+      @content;
+    }
+  }
+}
+///////////////////
+@import "normalize";
+@import "header";
+#main {
+	position: relative;
+	width: 100%;
+	height: auto;
+	@import "main-slider";
+	overflow:hidden;
+	#container {
+		position: relative;
+		width: $pc-width;
+		height: auto;
+		margin: 0 auto;
+		padding-top: 30px;
+		padding-bottom: 30px;
+		@import "cat-loop";
+		overflow: hidden;
+	}
+}//main
+// Custom CSS Single-video
+#single-main {
+	position: relative;
+	width: 100%;
+	height: auto;
+	background: $main-slider-bg;
+	overflow:hidden;
+	@import "video-single";
+	@import "playlist-single";
+}
+//VIDEO BRAND JS
+img#vjs-logobrand-image {
+	position: absolute;
+	top: 12px;
+	right: 20px;
+	transition: visibility 0.1s ease 0s, opacity 0.1s ease 0s;
+    visibility: visible;
+}
+.vjs-user-inactive img#vjs-logobrand-image {
+	visibility: visible;
+}
+.vjs-user-inactive.vjs-paused img#vjs-logobrand-image {
+	visibility: visible;
+}
+.vjs-ad-playing a#vjs-logobrand-image-destination {
+	display: none;
+}
+//VIDEO BRAND JS
+.more-toggle {
+	-ms-transform: rotate(45deg); /* IE 9 */
+    -webkit-transform: rotate(45deg); /* Safari */
+    transform: rotate(45deg);
+}
+//SWIPER SLIDE
+@import "swiper";
+//SHARE SOCIAL
+@import "share";
+//-----
+@import "achives-video";
+

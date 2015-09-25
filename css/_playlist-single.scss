@@ -1,0 +1,80 @@
+.playlist {
+	width:100%;
+	height: auto;
+	background-color:$main-slider-bg;
+	margin:0 auto;
+	padding: 2*$single-base-margin 0px 0px 0px;
+	.playlist-title {
+		position: relative;	
+		h3 {
+			color:white;
+			margin:0px 0px $single-base-margin $single-base-margin!important;
+		}
+	}
+	.swiper-container {
+	    width: 100%;
+	    height: auto;
+	    margin: 0 auto;
+		.swiper-wrapper:hover {
+			.swiper-slide {
+				opacity:0.5;
+			}
+		}
+	    .swiper-slide {
+	        max-width: 267px;
+	        height:auto!important;
+	        .thumb {
+	        	height: 150px;
+		        width: 267px;
+		        position: relative;
+	        	top:0;
+	        	left:0;
+	        	overflow: hidden;
+	        	img {
+	        		width: 100%;
+	        		height: 100%;  	
+	        	}
+	        	.overlay{
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+	        		height: 100%;
+	        		z-index: 2;
+	        		img {
+	        			position: absolute;
+						top: 50%;
+						left: 50%;
+						width: 64px;
+						height: 64px;
+						margin-top: -32px;
+						margin-left: -32px;
+	        		}
+	        	}
+	        }
+	        h4 {
+		    	position: relative;
+		    	margin-top:10px;
+		    	margin-bottom:$single-base-margin;
+		    	width: 100%;
+		    	height: auto;
+
+		    	a {
+		    		color: white;
+		    		font-size: 14px;
+		    		line-height: 20px;
+		    	}
+		    } 
+		}
+	    .swiper-slide:first-child {
+	    	margin-left: $single-base-margin;
+	    }
+	    .swiper-button-next, .swiper-button-prev {
+	    		margin-top: -30px!important; 
+	    }
+		.swiper-button-disabled {pointer-events:auto;}
+		.swiper-slide:hover {
+			opacity:1!important;
+		}
+	}
+}
