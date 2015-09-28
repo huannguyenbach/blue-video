@@ -1,16 +1,10 @@
 <?php 
 // Category Archive Page
 get_header(); ?>
-<?php 
-$args4 = array (
-        'posts_per_page' => '3',
-        'order' => 'desc'
-    );
-    $cat_post = new WP_Query($args4);
-?>
+
 <main id="achive-main">
             <div class="container">
-            <?php  if ( $cat_post->have_posts() ) : ?>
+            <?php  if ( have_posts() ) : ?>
                 <div class="content">
                     <div class="column1">
                         <h3><?php single_cat_title( '', true ); ?></h3>  
@@ -23,9 +17,9 @@ $args4 = array (
                     </div>
                 </div>
                 <div class="show-post">
-                    <div class="show-post-inner">
-                    <?php while ( $cat_post->have_posts() ) : $cat_post->the_post(); ?>
-                        <div class="post">
+                    <div class="show-post-inner" id="show-post-inner">
+                    <?php while ( have_posts() ) : the_post(); ?>
+                        <div class="post" id="post">
                             <div class="post-inner">
                                 <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
                                     <div class="thumb">
@@ -43,6 +37,11 @@ $args4 = array (
                     <?php endwhile; ?>
                     </div>
                 </div><!-- show-post -->
+                <div class="pagination" id="pagination">
+                    <div class="nav-next"><?php previous_posts_link( 'Bài mới hơn' ); ?></div>
+                    <div class="nav-previous"><?php next_posts_link( 'Bài cũ hơn' ); ?></div>
+                    
+                </div>
             <?php endif; ?>
             </div>
 </main>
