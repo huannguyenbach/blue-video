@@ -45,52 +45,46 @@ function bluevideo_register_meta_boxes( $meta_boxes )
 		'autosave'   => true,
 		// List of meta fields
 		'fields'     => array(	
-			// SELECT ADVANCED BOX
+			// SELECT BOX
 			array(
 				'name'        => __( 'Chọn kênh Video', 'bluevideo' ),
 				'id'          => "{$prefix}channel",
-				'type'        => 'select_advanced',
+				'type'        => 'select',
+				// Array of 'value' => 'Label' pairs for select box
 				'options'     => array(
 					'value1' => __( 'Youtube', 'bluevideo' ),
 					'value2' => __( 'Vimeo', 'bluevideo' ),
-					'value3' => __( 'My Video', 'bluevideo' ),
+					'value3' => __( 'My Video (MP4, flash)', 'bluevideo' ),
 				),
+				// Select multiple values, optional. Default is false.
 				'multiple'    => false,
-				'std'         => 'value1', // Default value, optional
-				'placeholder' => __( 'Select an Item', 'bluevideo' ),
+				'std'         => 'value1',
 			),
 			// OEMBED
 			array(
-				'name' => __( 'Link Youtube', 'bluevideo' ),
-				'id'   => "{$prefix}youtube",
-				'desc' => __( 'Preview', 'bluevideo' ),
+				'name' => __( 'Link Video', 'bluevideo' ),
+				'id'   => "{$prefix}embed",
+				'desc' => __( 'Gắn link đúng với kênh channel, nếu không video sẽ không hoạt động', 'bluevideo' ),
 				'type' => 'oembed',
-			),
-			// URL 1 (MP4 file)
-			array(
-				'name' => __( 'Link', 'bluevideo' ),
-				'id'   => "{$prefix}mp4",
-				'desc' => __( 'Gắn link URL Video', 'bluevideo' ),
-				'type' => 'url',
-				'std'  => '',
 			),
 			// CHECKBOX
 			array(
-				'name' => __( 'Có file Caption?', 'bluevideo' ),
-				'id'   => "{$prefix}check_caption",
+				'name' => __( 'Có file Subtitle?', 'bluevideo' ),
+				'id'   => "{$prefix}check_sub",
 				'type' => 'checkbox',
 				// Value can be 0 or 1
 				'std'  => 0,
+				'desc' => __( 'Chỉ sử dụng cho video tự host, không với Youtube và Vimeo', 'bluevideo' ),
 			),
-			// URL 2 (Caption File)
+			// URL
 			array(
-				'name' => __( 'File Caption', 'bluevideo' ),
-				'id'   => "{$prefix}captionurl",
-				'desc' => __( 'Gắn link URL file Caption', 'bluevideo' ),
+				'name' => __( 'Link Subtitle (.vtt, .srt)', 'bluevideo' ),
+				'id'   => "{$prefix}sub_url",
+				'desc' => __( 'Gắn link file subtitle', 'bluevideo' ),
 				'type' => 'url',
 				'std'  => '',
 			),
-
+			
 		),
 	);
 	
