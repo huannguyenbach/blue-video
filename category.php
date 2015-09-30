@@ -12,9 +12,6 @@ get_header(); ?>
                             <?php echo category_description(); ?>
                         <?php endif; ?>
                     </div>
-                    <div class="column2">
-                        <div id="share"></div>
-                    </div>
                 </div>
                 <div class="show-post">
                     <div class="show-post-inner" id="show-post-inner">
@@ -45,5 +42,4 @@ get_header(); ?>
             <?php endif; ?>
             </div>
 </main>
-<?php get_template_part('share-button'); ?>
 <?php get_footer(); ?>

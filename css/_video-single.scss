@@ -32,6 +32,15 @@
 				margin:0 auto;
 				padding: (100% * 9/16) 0 0 0;
 		}
+		.vjs-no-js {
+			position:absolute;
+			top:0px;
+			left:0px;
+			width: auto!important;
+			@include media(smaller){
+			font-size:1em;
+			}
+		}
 	}
 	.info {
 		position: relative;

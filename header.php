@@ -24,16 +24,20 @@
         <!-- SWIPER -->
         <script src="<?php echo get_template_directory_uri(); ?>/js/vendor/swiper.jquery.min.js"></script>
         <!-- VIDEOJS -->
-        <script src="<?php echo get_template_directory_uri(); ?>/js/vendor/videojs/video.js"></script>
-        <script>
-            videojs.options.flash.swf = "<?php echo get_template_directory_uri(); ?>/js/vendor/videojs/video-js.swf";
-        </script>
         <script src="<?php echo get_template_directory_uri(); ?>/js/main.js"></script> 
         <?php wp_head(); ?>
     </head>
-   
 
     <body <?php body_class(); ?>>
+        <?php if ( is_single() ) : ?>
+            <script src="<?php echo get_template_directory_uri(); ?>/js/vendor/videojs/video.js"></script>
+            <script>
+                    videojs.options.flash.swf = "<?php echo get_template_directory_uri(); ?>/js/vendor/videojs/video-js.swf";
+            </script>
+        <?php endif;// is_single() ?>
+        <!-- Google Analytics -->
+        <?php include_once("analyticstracking.php") ?> 
+        <!-- ////// -->
     	<header id="header" class="header">
     		<div id="container">
 	    		<div id="logo">
@@ -41,19 +45,6 @@
                         <img src="<?php echo get_template_directory_uri(); ?>/image/header-logo.png" alt="BLUE INTERIOR">
                     </a>      
                 </div>
-                <nav class="nav-pc">
-                            <a href="#" class="parent">
-                                <i class="fa fa-television"></i>&nbsp; KÊNH
-                            </a>
-                            <?php wp_nav_menu( array(
-                                'theme_location' => 'primary',
-                                'menu_class' => 'dropdown',
-                                'menu_id' => 'primary-menu'
-                            ) ); 
-                            ?>
-	    		</nav>
-	    		<div class="menu-action">
-	    			<a href="http://noithatblue.com">noithatblue.com</a>	
-	    		</div><!-- menu-action -->
+                <?php get_template_part('template/nav-menu'); ?>
 	    	</div><!-- container-->
     	</header><!-- /header -->

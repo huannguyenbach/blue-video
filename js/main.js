@@ -1,6 +1,4 @@
-
-
-    $( document ).ready(function() {
+$( document ).ready(function() {
 /*Video content Toggle*/
         $('.content-more').hide();
         $('#content-more').click(function(){
